@@ -267,7 +267,9 @@ layer parse_region(list *options, size_params params)
     int classes = option_find_int(options, "classes", 20);
     int num = option_find_int(options, "num", 1);
 
+    printf("ruqiang826_1,%d %d \n", num, classes);
     layer l = make_region_layer(params.batch, params.w, params.h, num, classes, coords);
+    printf("ruqiang826_2,%d %d \n", l.outputs, params.inputs);
     assert(l.outputs == params.inputs);
 
     l.log = option_find_int_quiet(options, "log", 0);
